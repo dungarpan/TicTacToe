@@ -28,14 +28,28 @@ class TicTacToe:
         else:
             self.board[x][y] = self.p2
         print(self.board)
-        
+
+    def isValidPos(self):
+        x,y = int(self.pos[0]), int(self.pos[1])
+        if x<0 or x>2 or y<0 or y>2:
+            return False
+        if self.board[x][y] != '-':
+            return False
+        return True
+    
     def start(self):
         while not self.isWon() and self.turns<9:
             if self.turns%2==0:
                 self.pos = input("Player 1's turn. select your spot e.g [00,12,21,12]")
+                if not self.isValidPos():
+                    print("Check your position mate!!")
+                    continue
                 self.insertToken(1)
             else:
                 self.pos = input("Player 2's turn. select your spot e.g [00,12,21,12]")
+                if not self.isValidPos():
+                    print("Check your position mate!!")
+                    continue
                 self.insertToken(2)
             self.turns+=1
             self.display()
@@ -49,6 +63,7 @@ class TicTacToe:
 
     def display(self):
          print(" ".join(self.board[0]) + "\n" + " ".join(self.board[1]) + "\n" + " ".join(self.board[2]) + "\n")
+
     def __str__(self) -> str:
         return " ".join(self.board[0]) + "\n" + " ".join(self.board[1]) + "\n" + " ".join(self.board[2]) + "\n"
     

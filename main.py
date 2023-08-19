@@ -1,7 +1,7 @@
 class TicTacToe:
     def __init__(self) -> None:
         print("New game instance")
-        self.board = [["-","-","-"],["-","-","-"],["-","-","-"]]
+        self.board = [["-","-","-"] for i in range(3)]
         self.p1 = "X"
         self.p2 = "O"
         self.turns =0

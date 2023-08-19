@@ -9,16 +9,16 @@ class TicTacToe:
 
     def isWon(self) -> bool:
         for i in self.board:
-            if not (i[0] != "-" and i[0]==i[1] and i[1]==i[2]):
-                return False
+            if i[0] != "-" and i[0]==i[1]==i[2]:
+                return True
         for i in range(3):
-            if not(i[i][0] !="-" and self.board[i][0]==self.board[i][1] and self.board[i][1]==self.board[i][2]):
-                return False
-        if not (self.board[0][0]!="-" and self.board[0][0]==self.board[1][1] and self.board[1][1]==self.board[2][2]):
-            return False
-        if not (self.board[0][2]!="-" and self.board[0][2]==self.board[1][1] and self.board[1][1]==self.board[2][0]):
-            return False
-        return True
+            if self.board[i][0] !="-" and self.board[i][0]==self.board[i][1]==self.board[i][2]:
+                return True
+        if self.board[0][0]!="-" and self.board[0][0]==self.board[1][1]==self.board[2][2]:
+            return True
+        if self.board[0][2]!="-" and self.board[0][2]==self.board[1][1]==self.board[2][0]:
+            return True
+        return False
     
     def insertToken(self, player):
         x,y = int(self.pos[0]), int(self.pos[1])

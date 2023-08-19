@@ -24,9 +24,9 @@ class TicTacToe:
         x,y = int(self.pos[0]), int(self.pos[1])
         print(x,y)
         if player==1:
-            self.board[x][y] == self.p1
+            self.board[x][y] = self.p1
         else:
-            self.board[x][y] == self.p2
+            self.board[x][y] = self.p2
         print(self.board)
         
     def start(self):

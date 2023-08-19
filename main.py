@@ -39,6 +39,13 @@ class TicTacToe:
                 self.insertToken(2)
             self.turns+=1
             self.display()
+        
+        if self.turns==9:
+            print("The game has been drawed")
+        if self.turns%2==1:
+            print("Player 1 has won the game. Good work!")
+        else:
+            print("Player 2 has won the game. Good work!")
 
     def display(self):
          print(" ".join(self.board[0]) + "\n" + " ".join(self.board[1]) + "\n" + " ".join(self.board[2]) + "\n")
